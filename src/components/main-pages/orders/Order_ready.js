@@ -7,7 +7,7 @@ const useStyles = makeStyles((theme) => ({
     zIndex: 10,
     position: "absolute",
     marginTop: "-50px",
-    marginLeft: "-100px",
+    marginLeft: "-15rem",
     background: "white",
     border: "1px solid",
     borderRadius: "20px",
@@ -41,7 +41,7 @@ export default function OrderReady({
 
   const validationModal = (
     <div className={classes.modal}>
-      <span style={{'fontWeight': 'bold'}}>האם אתם בטוחים שההזמנה נמסרה לשליח, עם כל המנות בתוכה?</span>
+      <span style={{'fontWeight': 'bold', direction: 'rtl'}}>האם אתם בטוחים שההזמנה נמסרה לשליח, עם כל המנות בתוכה?</span>
       <span style={{'margin-right': '1rem', 'fontSize': '1.5rem'}}>
       <Button
           className="disagree"
@@ -61,7 +61,7 @@ export default function OrderReady({
           variant="outlined"
           size="small"
         >
-          בטוחים
+          בטוח
         </Button>
         
       </span>
