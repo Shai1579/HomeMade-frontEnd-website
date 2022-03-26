@@ -1,7 +1,6 @@
 import React,{useState} from 'react'
 import Button from '@material-ui/core/Button';
 import Dialog from '@material-ui/core/Dialog';
-import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
 import DialogContentText from '@material-ui/core/DialogContentText';
 import {DialogTitle,Grid} from '@material-ui/core';
@@ -13,7 +12,7 @@ const Transition = React.forwardRef(function Transition(props, ref) {
   });
 
   
-export default function User_history({token,user_id,order_id}) {
+export default function UserHistory({token,user_id,order_id}) {
     const [open, setOpen] = React.useState(false);
     const [history, setHistory]=useState([])
     const handleClickOpen = async() => {
@@ -36,7 +35,6 @@ export default function User_history({token,user_id,order_id}) {
     }
     ) 
     const data = await res2.json()
-    console.log(data)
     setHistory(data.preview_order)
     if(data){
         setOpen(true);

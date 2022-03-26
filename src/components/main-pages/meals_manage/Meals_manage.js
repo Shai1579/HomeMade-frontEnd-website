@@ -2,11 +2,11 @@ import React,{useEffect,useState} from 'react'
 import {domain} from '../../../connection/Config'
 import {Grid,Avatar,Container,Button} from '@material-ui/core';
 import '../../../css/meals_manage.css'
-import Search_meal from './Search_meal';
+import SearchMeal from './Search_meal';
 import firebase from '../../../connection/firebase' 
 
 export default function Meals_manage({setLoader,token,tokenID}) {
-    const[itemId,setItemId]=useState(0)
+    // const[itemId,setItemId]=useState(0)
     const[available,setAvailable]=useState('')
     const[items,setItems]=useState([])
     const[allItems,setAllItems]=useState([])
@@ -29,12 +29,12 @@ export default function Meals_manage({setLoader,token,tokenID}) {
             }
             get_dishes()
         setLoader(false)
-    },[])
+    },[setLoader, token])
     
     const notAvialable= async(id,index)=>{
         setLoader(true)
         try{
-            let snapshot = await db.collection('meals').doc(id.id).update({
+            await db.collection('meals').doc(id.id).update({
                 available:false
             })
     
@@ -53,7 +53,7 @@ export default function Meals_manage({setLoader,token,tokenID}) {
         console.log(id.id)
         setLoader(true)
         try{
-            let snapshot = await db.collection('meals').doc(id.id).update({
+            await db.collection('meals').doc(id.id).update({
                 available:true
             })
               
@@ -80,7 +80,7 @@ export default function Meals_manage({setLoader,token,tokenID}) {
           });
           console.log( my_meals)
          try{
-            if(available=="true"){
+            if(available ==="true"){
                 my_meals.forEach(async(item)=>{
                  await db.collection('meals').doc(item.id).update({
                         available:true
@@ -113,7 +113,7 @@ export default function Meals_manage({setLoader,token,tokenID}) {
             <div className='list-warper'>
             <Grid className='header-warper' style={{ backgroundColor: "rgb(221, 235, 243)"}}>
                 <Grid>
-                <Search_meal 
+                <SearchMeal 
                    items={items} 
                    setItems={setItems}
                     allItems={allItems}/> 
@@ -138,7 +138,7 @@ export default function Meals_manage({setLoader,token,tokenID}) {
                 return(
             <Grid className='row' >
              <Grid className='bt-warper' xl={3} md={3} lg={3}>
-                 {el.available ==true?
+                 {el.available === true?
                   <Button onClick={()=>{notAvialable(el,index)}} className='bt_avialable'   variant='outlined'>זמין</Button>
                 :<Button onClick={()=>{avialable(el,index)}} className='bt_avialable'  variant='outlined'>לא זמין</Button> }
              </Grid>

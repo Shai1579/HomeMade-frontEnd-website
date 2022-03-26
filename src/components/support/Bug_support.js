@@ -1,6 +1,5 @@
 import React from 'react'
 import '../../css/support.css'
-import {Grid,Avatar,Container,Button} from '@material-ui/core';
 export default function Bug_support() {
     return (
        <div style={{minHeight:'85vh',}}>

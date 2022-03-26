@@ -35,7 +35,7 @@ const StyledMenu = withStyles({
     },
   }))(MenuItem);
 
-export default function Menu_notifaication({setOrders_counter,setCurrentPage,orders_counter}) {
+export default function MenuNotifaication({setOrders_counter,setCurrentPage,orders_counter}) {
     const [anchorEl, setAnchorEl] = React.useState(null);
     let history = useHistory();
     const handleClick = (event) => {

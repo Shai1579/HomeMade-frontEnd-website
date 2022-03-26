@@ -11,7 +11,6 @@ function App() {
 
 useEffect(() => {
   const obj = JSON.parse(localStorage.getItem('cookies'))
-  
   if(obj){
     setToken(obj.id)
     setTokenID(obj.token)

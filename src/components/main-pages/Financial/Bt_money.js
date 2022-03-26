@@ -31,12 +31,6 @@ export default function Bt_money({setCash_withrawal,total_profit,token,cooker}) 
      const [answer, setAnswer] = useState('');
     const handleClickOpen = () => {
       setOpen(true);
-      console.log(process.env.REACT_APP_wise_secret_token)
-    };
-  
-    const handleClose = async() => {
-     
-       setOpen(false);
     };
 
     const continue_page=(e)=>{

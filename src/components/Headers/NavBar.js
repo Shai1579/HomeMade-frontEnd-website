@@ -1,7 +1,7 @@
 import React from 'react'
 import '../../css/nav_bars.css'
 import {Grid,Avatar,Badge} from '@material-ui/core';
-import Menu_notifaication from './Menu_notifaication';
+import MenuNotifaication from './Menu_notifaication';
 
 export default function NavBar({currentPage,orders_counter,setOrders_counter,setCurrentPage,cooker,newOrder}) {
     return (
@@ -20,7 +20,7 @@ export default function NavBar({currentPage,orders_counter,setOrders_counter,set
              <Grid className='icons-header-warper'>
           <div className='icon-warper'>
           <Badge badgeContent={orders_counter} color="secondary">
-          <Menu_notifaication
+          <MenuNotifaication
           newOrder={newOrder}
           orders_counter={orders_counter}
           setOrders_counter={setOrders_counter}

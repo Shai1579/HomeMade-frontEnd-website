@@ -1,8 +1,7 @@
-import React,{useState} from 'react'
-import Autocomplete from '@material-ui/lab/Autocomplete';
+import React from 'react'
 
-export default function Search_meal({items,setItems,allItems}) {
-    const [oldValue,setOldValue]=useState(items)
+export default function SearchMeal({items,setItems,allItems}) {
+    // const [oldValue,setOldValue]=useState(items)
     const filtered = (e)=>{
         
         if(e){

@@ -8,8 +8,9 @@ export default function Reviews({setLoader,token}) {
     const [meals,setMeals]= useState([])
     const [allmeals,setAllMeals]= useState([])
     const [reviews,setReviews]= useState([])
+
     useEffect(() => {
-        setLoader(true)
+    setLoader(true)
      const get_data_review = async()=>{
      const res= await fetch(`http://localhost:7000/reviews/${token}`)
      const data = await res.json()
@@ -20,7 +21,7 @@ export default function Reviews({setLoader,token}) {
      }
      get_data_review()
      setLoader(false)
-    }, [])
+    }, [setLoader, token])
 
 const filter_dish=(element)=>{
     if(element !== "כל המנות"){

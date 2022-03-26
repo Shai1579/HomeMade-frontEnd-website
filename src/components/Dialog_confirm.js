@@ -58,7 +58,7 @@ export default function Dialog_confirm({setDialog_triger,choosen_one,token,setRi
         <DialogTitle id="alert-dialog-slide-title"> ? זה הרינגטון שבחרת</DialogTitle>
         <DialogContent>
           <DialogContentText id="alert-dialog-slide-description">
-          <iframe style={{width:'100%'}}  src={choosen_one}>
+          <iframe title='dialogIframe' style={{width:'100%'}}  src={choosen_one}>
           </iframe>
           </DialogContentText>
         </DialogContent>

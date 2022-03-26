@@ -52,21 +52,11 @@ export default function Responsive_menu({setCurrentPage,setTokenID,setToken}) {
             התנתק
             </IconButton> 
        </Grid> 
-            <Grid style={{borderTop: '1px solid  white'}} className='link_warper'>
-            <NavLink exact
-            activeClassName="navbar__link--active" 
-             className='nav_link' onClick={()=>setCurrentPage('דוחות פיננסים')}  to='/'>דוחות פיננסים</NavLink>
-            </Grid>
             <Grid className='link_warper'>
             <NavLink exact
             activeClassName="navbar__link--active"
             className='nav_link' onClick={()=>setCurrentPage('הזמנות')}  to='/orders'>הזמנות </NavLink>
             </Grid>
-            <Grid className='link_warper'>
-            <NavLink exact
-            activeClassName="navbar__link--active"
-            className='nav_link' onClick={()=>setCurrentPage('ביקורות')} to='/reviews'>ביקורות </NavLink>
-                </Grid>
                 <Grid className='link_warper'>
                 <NavLink exact
                  activeClassName="navbar__link--active" 
@@ -76,10 +66,6 @@ export default function Responsive_menu({setCurrentPage,setTokenID,setToken}) {
                 <NavLink exact
              activeClassName="navbar__link--active" 
              onClick={()=>setCurrentPage('זמינות מנה')} className='nav_link' to='/meals_manage'>זמינות מנה</NavLink>
-                </Grid>
-                <Grid style={{marginBottom:'60px'}} className='link_warper'>
-                <a style={{textDecoration:'none',color:'white',fontSize:'18px'}} href='https://forms.gle/h5fdDHMGw4b5dSzT8'
-                 className='link_warper'>הוסף מנה חדשה</a>
                 </Grid>
                 <Grid style={{zIndex:'-1000'}} className='logo_warper'>
                     <img style={{width:"100%"}} src='Homemade.png'/>

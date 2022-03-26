@@ -20,7 +20,8 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Login({token,setToken,tokenID,setTokenID}) {
     const classes = useStyles();
-  const [open, setOpen] = React.useState(true);
+  // const [open, setOpen] = useState(true);
+  const open = true;
     return (
         <div className='login-container'>
            <Modal

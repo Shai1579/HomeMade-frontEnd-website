@@ -2,8 +2,8 @@ import React from 'react'
 import Responsive_menu from "./Responsive_menu"
 import '../../css/nav_bars.css'
 import {Grid,Avatar,Badge} from '@material-ui/core';
-import Menu_notifaication from './Menu_notifaication';
-export default function Responsive_nav({currentPage,orders_counter,setOrders_counter,
+import MenuNotifaication from './Menu_notifaication';
+export default function ResponsiveNav({currentPage,orders_counter,setOrders_counter,
   setCurrentPage,
   width,cooker,setToken,setTokenID,newOrder}) {
     return (
@@ -29,7 +29,7 @@ export default function Responsive_nav({currentPage,orders_counter,setOrders_cou
           
           <div className='icon-warper'>
           <Badge badgeContent={orders_counter} color="secondary">
-          <Menu_notifaication
+          <MenuNotifaication
           setOrders_counter={setOrders_counter}
           setCurrentPage={setCurrentPage}
           newOrder={newOrder}
