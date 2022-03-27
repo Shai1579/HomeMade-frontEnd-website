@@ -18,7 +18,7 @@ export default function Orders({
   setPreview_orders,
   setRefresh,
 }) {
-  const today = new Date().setHours(0, 0, 0);
+  const today = new Date().setHours(0, 0, 0, 0);
   const tomorrow = new Date(today);
   tomorrow.setDate(tomorrow.getDate() + 1);
   const todayOrders = [];
@@ -30,7 +30,6 @@ export default function Orders({
 
   newOrder.forEach((order) => {
     const orderDate = new Date(order.delivery).setHours(0, 0, 0, 0);
-
     if (orderDate === today) {
       todayOrders.push(order);
     } else if (orderDate === tomorrow.setHours(0, 0, 0, 0)) {
