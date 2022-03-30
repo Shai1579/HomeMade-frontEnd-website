@@ -18,6 +18,7 @@ export default function Orders({
   setPreview_orders,
   setRefresh,
 }) {
+  const oldOrders = [...preview_orders];
   const today = new Date().setHours(0, 0, 0, 0);
   const tomorrow = new Date(today);
   tomorrow.setDate(tomorrow.getDate() + 1);
@@ -34,11 +35,14 @@ export default function Orders({
       todayOrders.push(order);
     } else if (orderDate === tomorrow.setHours(0, 0, 0, 0)) {
       tomorrowOrders.push(order);
+    } else if (orderDate < today){
+      oldOrders.push(order);
     } else {
       futureOrders.push(order);
     }
   });
 
+  oldOrders.sort((a, b) => +b.order_id - +a.order_id);
   const todayOrdersJSX = todayOrders.map((el) => {
     return (
       <Grid style={{ marginBottom: "15px" }} key={el.order_id + "new"}>
@@ -48,7 +52,7 @@ export default function Orders({
           token={token}
           setNewOrder={setNewOrder}
           newOrder={newOrder}
-          preview_orders={preview_orders}
+          preview_orders={oldOrders}
           setPreview_orders={setPreview_orders}
           setLoader={setLoader}
         />
@@ -63,7 +67,7 @@ export default function Orders({
           token={token}
           setNewOrder={setNewOrder}
           newOrder={newOrder}
-          preview_orders={preview_orders}
+          preview_orders={oldOrders}
           setPreview_orders={setPreview_orders}
           setLoader={setLoader}
         />
@@ -78,7 +82,7 @@ export default function Orders({
           token={token}
           setNewOrder={setNewOrder}
           newOrder={newOrder}
-          preview_orders={preview_orders}
+          preview_orders={oldOrders}
           setPreview_orders={setPreview_orders}
           setLoader={setLoader}
         />
@@ -108,8 +112,8 @@ export default function Orders({
             <h3>הזמנות שבוצעו</h3>
           </Grid>
           <Grid style={{ height: "100vh", overflowY: "auto" }}>
-            {preview_orders && preview_orders.length > 0 ? (
-              preview_orders.map((el) => {
+            {oldOrders && oldOrders.length > 0 ? (
+              oldOrders.map((el) => {
                 return (
                   <Grid
                     className="page_orders_warper"
